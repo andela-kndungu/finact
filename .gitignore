@@ -1,0 +1,5 @@
+# Generate the dist folder by running webpack
+dist
+
+node_modules
+
