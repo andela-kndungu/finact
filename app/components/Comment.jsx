@@ -1,10 +1,17 @@
 import React from 'react';
+import Remarkable from 'remarkable';
 
 const Comment = (props) => {
+  const rawMarkup = () => {
+    const md = new Remarkable;
+    const markup = md.render(props.children.toString());
+    return { __html: markup };
+  };
+
   return (
     <div>
       <h2>{props.author}</h2>
-      {props.children}
+      <span dangerouslySetInnerHTML={rawMarkup()}></span>
     </div>
   );
 };
