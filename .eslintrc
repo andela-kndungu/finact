@@ -1,4 +1,6 @@
 {
   "extends": "airbnb",
-  "comma-dangle": 0 
+	"rules": {
+    arrow-body-style: 0
+  }
 }
