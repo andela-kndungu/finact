@@ -1,6 +1,18 @@
 import React from 'react';
 
-export default function () {
-  return (<h1>I am the Comment</h1>);
-}
+const Comment = (props) => {
+  return (
+    <div>
+      <h2>{props.author}</h2>
+      {props.children}
+    </div>
+  );
+};
+
+Comment.propTypes = {
+  author: React.PropTypes.string.isRequired,
+  children: React.PropTypes.string.isRequired,
+};
+
+export default Comment;
 

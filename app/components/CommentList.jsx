@@ -5,7 +5,8 @@ export default function () {
   return (
     <div>
       <h1>I am the CommentList</h1>
-      <Comment />
+      <Comment author="Kinuthia">I am wise</Comment>
+      <Comment author="John Doe">I may be wiser</Comment>
     </div>
   );
 }
