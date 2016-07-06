@@ -1,30 +1,37 @@
 import React from 'react';
-// import Comment from './Comment.jsx';
-import FinactStore from '../stores/FinactStore.js';
+import Comment from './Comment.jsx';
 
-function getComments() {
-  return FinactStore.getAll();
-}
-
-export default class CommentList extends React.Component {
-  constructor() {
-    super();
-    this.state = { comments: getComments() };
-  }
-
-  componentWillUnmount() {
-    FinactStore.removeChangeListener(this.onChange);
-  }
-
-  componenntDidMount() {
-    FinactStore.addChangeListener(this.onChange);
-  }
-
-  render() {
+function processNodes(comments) {
+  const commentsJsx = comments.map((comment, index) => {
     return (
-      <h1>{this.state.comments.length}</h1>
+      <Comment
+        author={comment.author}
+        key={index}
+      >
+        {comment.text}
+      </Comment>
     );
-  }
+  });
 
+  return commentsJsx;
 }
+
+const CommentList = (props) => {
+  return (
+    <div>
+      {processNodes(props.comments)}
+    </div>
+  );
+};
+
+CommentList.propTypes = {
+  comments: React.PropTypes.arrayOf(
+    React.PropTypes.shape({
+      author: React.PropTypes.string,
+      text: React.PropTypes.string,
+    })
+  ),
+};
+
+export default CommentList;
 

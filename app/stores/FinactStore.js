@@ -6,10 +6,10 @@ const CHANGE_EVENT = 'change';
 
 let comments = [{
   author: 'Kinuthia',
-  comment: 'A commnet',
+  text: 'A commnet',
 }, {
   author: 'Kinuthia',
-  comment: 'A commnet',
+  text: 'A commnet',
 }];
 
 const FinactStore = Object.assign({}, EventEmitter.prototype, {
