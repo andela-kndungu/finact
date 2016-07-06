@@ -17,6 +17,11 @@ const FinactStore = Object.assign({}, EventEmitter.prototype, {
     return comments;
   },
 
+  updateComments(data) {
+    comments = data;
+    this.emitChange();
+  },
+
   emitChange() {
     this.emit(CHANGE_EVENT);
   },
@@ -31,10 +36,9 @@ const FinactStore = Object.assign({}, EventEmitter.prototype, {
 });
 
 AppDispatcher.register((action) => {
-  switch (action.actionTYpe) {
-    case FinactConstants.FINACT_GET_COMMENTS:
-      console.log('Dispatcher called');
-      FinactStore.emitChange();
+  switch (action.actionType) {
+    case FinactConstants.FINACT_FETCH_COMMENTS:
+      FinactStore.updateComments(action.data);
       break;
     default:
       console.log('Got to the end of switch');
