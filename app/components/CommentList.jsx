@@ -1,13 +1,30 @@
 import React from 'react';
-import Comment from './Comment.jsx';
+// import Comment from './Comment.jsx';
+import FinactStore from '../stores/FinactStore.js';
 
-export default function () {
-  return (
-    <div>
-      <h1>I am the CommentList</h1>
-      <Comment author="Kinuthia">I am *wise*</Comment>
-      <Comment author="John Doe">I may be *wiser*</Comment>
-    </div>
-  );
+function getComments() {
+  return FinactStore.getAll();
+}
+
+export default class CommentList extends React.Component {
+  constructor() {
+    super();
+    this.state = { comments: getComments() };
+  }
+
+  componentWillUnmount() {
+    FinactStore.removeChangeListener(this.onChange);
+  }
+
+  componenntDidMount() {
+    FinactStore.addChangeListener(this.onChange);
+  }
+
+  render() {
+    return (
+      <h1>{this.state.comments.length}</h1>
+    );
+  }
+
 }
 
