@@ -30,7 +30,7 @@ class CommentBox extends React.Component {
     return (
       <div>
         <CommentList comments={this.state.comments} />
-        <CommentForm />
+        <CommentForm url={this.props.url} />
       </div>
     );
   }

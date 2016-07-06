@@ -1,4 +1,5 @@
 import React from 'react';
+import FinactActions from '../actions/FinactActions.js';
 
 class CommentForm extends React.Component {
   constructor() {
@@ -23,6 +24,7 @@ class CommentForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    FinactActions.post(this.props.url, this.state);
     this.setState({ author: '', text: '' });
   }
 
@@ -48,6 +50,10 @@ class CommentForm extends React.Component {
     );
   }
 }
+
+CommentForm.propTypes = {
+  url: React.PropTypes.string,
+};
 
 export default CommentForm;
 

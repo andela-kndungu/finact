@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import CommentBox from './components/CommentBox.jsx';
 
 ReactDom.render(
-  <CommentBox url="http://finact.herokuapp.com/api/comments" />,
+  <CommentBox url="http://finact.herokuapp.com/api/comments/" />,
   document.getElementById('app')
 );
 

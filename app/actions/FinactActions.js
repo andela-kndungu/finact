@@ -13,6 +13,20 @@ const FinactActions = {
         });
       });
   },
+
+  post(url, data) {
+    console.log(data);
+    console.log(url);
+    request
+      .post(url)
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json')
+      .type('json')
+      .send(data)
+      .end((error, result) => {
+        console.log(result);
+      });
+  },
 };
 
 export default FinactActions;
