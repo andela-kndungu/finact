@@ -40,6 +40,9 @@ AppDispatcher.register((action) => {
     case FinactConstants.FINACT_FETCH_COMMENTS:
       FinactStore.updateComments(action.data);
       break;
+    case FinactConstants.FINACT_POST_COMMENT:
+      FinactStore.updateComments(action.data);
+      break;
     default:
       console.log('Got to the end of switch');
   }
