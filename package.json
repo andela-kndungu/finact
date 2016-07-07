@@ -1,8 +1,8 @@
 {
-  "name": "finact",
+  "name": "draft-js-practice",
   "version": "1.0.0",
-  "description": "",
-  "main": "webpack.config.js",
+  "description": "Trying out Facebook's draft js",
+  "main": "app/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,30 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/andela-kndungu/finact.git"
   },
-  "author": "",
+  "keywords": [
+    "draft"
+  ],
+  "author": "Kinuthia",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/andela-kndungu/finact/issues"
   },
-  "homepage": "https://github.com/andela-kndungu/finact#readme",
-  "devDependencies": {
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.11.1",
-    "eslint": "^2.13.1",
-    "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-import": "^1.10.0",
-    "eslint-plugin-jsx-a11y": "^1.5.3",
-    "eslint-plugin-react": "^5.2.2"
-  },
-  "dependencies": {
-    "events": "^1.1.1",
-    "flux": "^2.1.1",
-    "keymirror": "^0.1.1",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "remarkable": "^1.6.2",
-    "superagent": "^2.0.0"
-  }
+  "homepage": "https://github.com/andela-kndungu/finact#readme"
 }
